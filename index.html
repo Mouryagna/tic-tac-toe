@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>TIC tac TOE</title>
+    <link rel="stylesheet" href="css/start.css">
+    <link rel="website icon" href="images/wallpaper.jpg" type="png">
+</head>
+<body>
+    <div class="round-1">X</div>
+    <div class="round-2">O</div>
+    <div class="about-box">
+        <a href="about.html">
+            <button class="about">About</button>
+        </a>
+    </div>
+    <div class="display">
+        <p class="game-name">Tic Tac Toe</p>
+        <div class="play-button">
+            <a href="tic-tac-toe.html">
+                <button class="play-game">O</button>
+            </a>
+            <a href="https://www.google.com/">
+                <button class="exit">X</button>
+            </a>
+        </div>
+    </div>
+    <script>
+        function hovering() {
+            const playGameButton = document.querySelector('.play-game');
+            setTimeout(function() {
+                playGameButton.addEventListener('mouseover', () => {
+                playGameButton.innerHTML = 'Start';
+                });
+
+                playGameButton.addEventListener('mouseout', () => {
+                playGameButton.innerHTML = 'O';
+                });
+            },1000);
+
+            const exitGame = document.querySelector('.exit');
+
+            setTimeout(function() {
+                exitGame.addEventListener('mouseover', () => {
+                exitGame.innerHTML = 'Exit';
+                });
+
+                exitGame.addEventListener('mouseout', () => {
+                    exitGame.innerHTML = 'X';
+                });
+            },1000);
+        }
+        setInterval(function() {
+            hovering();
+        },0.5);
+    </script>
+</body>
+</html>

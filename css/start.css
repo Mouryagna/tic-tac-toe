@@ -1,0 +1,116 @@
+body {
+    font-family: roboto,arial;
+    margin: 0;
+    background: linear-gradient(#FF8F00,rgb(83, 25, 218));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.display {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(300px);
+    font-size: 36px;
+    font-weight: bold;
+}
+.round-1,.round-2 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(rgb(83, 25, 218),#FF8F00);
+    border-radius: 50%;
+    margin: 8px;
+    text-align: center;
+    font-size: 200px;
+    color: white;
+    cursor: default;
+    animation: move 2s ease-in-out alternate;
+    cursor: pointer;
+    transition: width 0.15ms, height 0.15ms, font-family 0.15ms;
+    z-index: 0;
+}
+.round-1:hover {
+    animation: sidemove-x 2s ease-in-out 0.15ms backwards;
+}
+.round-2:hover {
+    animation: sidemove-o 2s ease-in-out 0.15ms backwards;
+}
+
+@keyframes move {
+    from{
+        width: 0;
+        height: 0;
+        font-size: 0;
+    }
+    to {
+        width: 250px;
+        height: 250px;
+        font-size: 200px;
+    }
+}
+@keyframes sidemove-x {
+    from {
+        transform: translate(0px);
+    }
+    to {
+        transform: translate(100%);
+    }
+}
+@keyframes sidemove-o {
+    from {
+        transform: translate(0px);
+    }
+    to {
+        transform: translate(-100%);
+    }
+}
+.round-1 {
+    top: 0;
+    left: 0;
+}
+.round-2 {
+    bottom: 0;
+    right: 0;
+}
+.play-game,.exit {
+    padding: 15px;
+    background-color: rgb(83, 25, 218);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    cursor: pointer;
+    width: 150px;
+    box-shadow: none;
+    outline: none;
+}
+.game-name {
+    color: white;
+}
+.play-button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.about {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 18px;
+    padding: 8px;
+    background-color: #FF8F00;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.about-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
